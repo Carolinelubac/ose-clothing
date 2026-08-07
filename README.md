@@ -8,13 +8,18 @@ paiement. La boutique Shopify sera développée séparément, plus tard.
 
 ## Structure
 
+Header (Accueil / Collections / À propos / Engagement / Contact + icône panier) et
+footer à 3 colonnes (Collections / À propos / Aide), identiques sur toutes les pages.
+Le lien "Collections" et l'icône panier renvoient vers la liste d'attente
+(`/#liste-attente`) tant que la boutique n'existe pas.
+
 - `index.html` — page d'accueil (hero, aperçu collection, liste d'attente, engagement)
-- `a-propos/`, `engagement/`, `contact/`, `mentions-legales/` — pages secondaires (URL propres, sans `.html`)
+- `a-propos/`, `engagement/`, `contact/`, `faq/`, `livraison-retours/`, `mentions-legales/` — pages secondaires (URL propres, sans `.html`)
 - `style.css` / `script.js` — styles et interactions
-- `assets/icons.svg` — sprite SVG des motifs de marque (citron, gouttes, mégaphone, produits, réseaux sociaux)
+- `assets/icons.svg` — sprite SVG des motifs de marque (citron, gouttes, mégaphone, panier, produits, réseaux sociaux)
 - `assets/img/` — logo et illustration citron optimisés pour le web (PNG + WebP)
 - `assets/source/` — fichiers logo originaux fournis par la cliente (haute résolution, non utilisés directement sur le site)
-- `favicon-32.png`, `favicon-512.png`, `apple-touch-icon.png`, `favicon.svg` — favicons (citron)
+- `favicon-32.png`, `favicon-512.png`, `apple-touch-icon.png` — favicons (vraie photo du citron)
 - `.github/workflows/deploy.yml` — déploiement automatique sur GitHub Pages
 - `CNAME` — domaine personnalisé (`ose-clothing.fr`)
 
@@ -60,10 +65,9 @@ suffit pas) et "Enforce HTTPS" activé une fois le certificat généré.
 
 ## Faire évoluer le site (ajout de la boutique Shopify)
 
-Le header et le footer ont une structure de navigation simple à étendre : ajouter un
-lien `<li><a href="https://[votre-boutique].myshopify.com">Boutique</a></li>` dans
-`.nav-links` (et dans `.footer-col` "Navigation") de chaque page, une fois la
-boutique Shopify prête. Aucune refonte n'est nécessaire.
+Le lien "Collections" du header et l'icône panier pointent vers `/#liste-attente`.
+Une fois la boutique Shopify prête, il suffit de remplacer ces `href` (dans chaque
+page, header + footer) par l'URL de la boutique — aucune refonte n'est nécessaire.
 
 ## Déploiement
 

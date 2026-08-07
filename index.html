@@ -29,14 +29,20 @@
   <nav>
     <ul class="nav-links" id="navLinks">
       <li><a href="/" class="active">Accueil</a></li>
+      <li><a href="/#liste-attente">Collections</a></li>
       <li><a href="/a-propos/">À propos</a></li>
       <li><a href="/engagement/">Engagement</a></li>
       <li><a href="/contact/">Contact</a></li>
     </ul>
   </nav>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-actions">
+    <a href="/#liste-attente" class="cart-btn" aria-label="Panier — boutique bientôt disponible">
+      <svg><use href="/assets/icons.svg#icon-cart"/></svg>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
 <section class="hero">
@@ -49,7 +55,7 @@
       <h1>OSE<span class="dot">.</span></h1>
       <p class="lead">Avance malgré l'incertitude.</p>
       <div class="hero-actions">
-        <a href="#liste-attente" class="btn btn-primary">Rejoindre la liste d'attente</a>
+        <a href="#liste-attente" class="btn btn-primary">Découvrir les collections</a>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -88,6 +94,7 @@
         <span class="tag">Bientôt disponible</span>
       </div>
     </div>
+    <p class="collections-cta"><a href="#liste-attente" class="btn btn-outline">Découvrir</a></p>
   </div>
 </section>
 
@@ -126,23 +133,36 @@
           </picture>
         </a>
         <p class="footer-baseline">Avance malgré l'incertitude.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/" aria-label="Instagram" target="_blank" rel="noopener"><svg><use href="/assets/icons.svg#icon-instagram"/></svg></a>
+          <a href="https://facebook.com/" aria-label="Facebook" target="_blank" rel="noopener"><svg><use href="/assets/icons.svg#icon-facebook"/></svg></a>
+          <a href="https://tiktok.com/" aria-label="TikTok" target="_blank" rel="noopener"><svg><use href="/assets/icons.svg#icon-tiktok"/></svg></a>
+        </div>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h4>Collections</h4>
           <ul>
-            <li><a href="/a-propos/">À propos</a></li>
-            <li><a href="/engagement/">Engagement</a></li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/#liste-attente">T-shirts</a></li>
+            <li><a href="/#liste-attente">Sweats</a></li>
+            <li><a href="/#liste-attente">Accessoires</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Suivez-nous</h4>
-          <div class="footer-social">
-            <a href="https://instagram.com/" aria-label="Instagram" target="_blank" rel="noopener"><svg><use href="/assets/icons.svg#icon-instagram"/></svg></a>
-            <a href="https://facebook.com/" aria-label="Facebook" target="_blank" rel="noopener"><svg><use href="/assets/icons.svg#icon-facebook"/></svg></a>
-            <a href="https://tiktok.com/" aria-label="TikTok" target="_blank" rel="noopener"><svg><use href="/assets/icons.svg#icon-tiktok"/></svg></a>
-          </div>
+          <h4>À propos</h4>
+          <ul>
+            <li><a href="/a-propos/#histoire">Notre histoire</a></li>
+            <li><a href="/a-propos/#valeurs">Nos valeurs</a></li>
+            <li><a href="/engagement/">Engagement</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Aide</h4>
+          <ul>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/livraison-retours/">Livraison &amp; retours</a></li>
+            <li><a href="/contact/">Nous contacter</a></li>
+          </ul>
         </div>
       </div>
     </div>

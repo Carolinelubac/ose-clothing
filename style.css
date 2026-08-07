@@ -126,6 +126,15 @@ h2.center { margin: 0 auto 1rem; }
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
 
+.nav-actions { display: flex; align-items: center; gap: 1.1rem; }
+.cart-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  transition: background var(--transition), transform var(--transition);
+}
+.cart-btn svg { width: 22px; height: 22px; }
+.cart-btn:hover { background: rgba(17,17,17,.06); transform: translateY(-1px); }
+
 .nav-toggle {
   display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px;
 }
@@ -197,7 +206,7 @@ h2.center { margin: 0 auto 1rem; }
 .collections-cta { text-align: center; }
 
 /* ── EMAIL CAPTURE ── */
-.waitlist { padding: clamp(3rem, 7vw, 5rem) 0; background: var(--cream-alt); }
+.waitlist { padding: clamp(3rem, 7vw, 5rem) 0; background: var(--cream-alt); scroll-margin-top: var(--nav-h); }
 .waitlist-box {
   max-width: 620px; margin: 0 auto; text-align: center;
   background: var(--white); border: 2px solid var(--black); border-radius: var(--radius);
@@ -238,7 +247,7 @@ h2.center { margin: 0 auto 1rem; }
 .page-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
 .page-hero p { max-width: 56ch; margin: 1rem auto 0; font-size: 1.1rem; }
 
-.content-section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.content-section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; scroll-margin-top: var(--nav-h); }
 .content-section + .content-section { border-top: 2px solid var(--black); }
 .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
 .content-grid .visual {
@@ -275,7 +284,7 @@ h2.center { margin: 0 auto 1rem; }
 .footer { background: var(--black); color: rgba(255,255,255,.75); padding: 3.5rem 0 2rem; }
 .footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem; margin-bottom: 2.5rem; }
 .footer-baseline { margin-top: .8rem; font-size: .9rem; color: rgba(255,255,255,.6); max-width: 26ch; }
-.footer-cols { display: flex; gap: 3.5rem; flex-wrap: wrap; }
+.footer-cols { display: flex; gap: 2.75rem; flex-wrap: wrap; }
 .footer-col h4 { font-family: var(--font-body); font-weight: 700; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
 .footer-col ul li { margin-bottom: .6rem; font-size: .92rem; }
 .footer-col ul a:hover { color: var(--yellow); }

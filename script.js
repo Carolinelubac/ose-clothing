@@ -60,6 +60,82 @@ bindFormspreeForm('waitlistForm', 'waitlistNote', 'Merci ! Tu seras prévenue en
 bindFormspreeForm('contactForm', 'contactNote', 'Merci, votre message est bien parti !');
 
 // ============================================================
+// MODULE BOUTIQUE — Shopify Buy Button
+// ============================================================
+// 1. Créez une boutique Shopify (ou utilisez celle existante).
+// 2. Dans l'admin Shopify : Paramètres > Applications et canaux de vente > Buy Button
+//    (installer le canal "Buy Button" s'il n'est pas déjà présent).
+// 3. Créez un bouton pour la collection à afficher, récupérez :
+//      - domain                 → xxxxx.myshopify.com
+//      - storefrontAccessToken  → token "Buy Button" généré par Shopify
+//      - id (collection)        → identifiant de la collection à afficher
+// 4. Renseignez les 3 valeurs ci-dessous. L'aperçu (T-shirt/Sweat/Casquette)
+//    disparaît automatiquement dès que SHOPIFY_CONFIG.domain est renseigné,
+//    remplacé par les vrais produits de la boutique.
+// ============================================================
+
+const SHOPIFY_CONFIG = {
+  domain: '', // ex: 'ose-clothing.myshopify.com'
+  storefrontAccessToken: '', // token "Buy Button" Shopify
+  collectionId: '', // ID de la collection Shopify à afficher
+};
+
+function initShopifyBuyButton() {
+  if (!SHOPIFY_CONFIG.domain || !SHOPIFY_CONFIG.storefrontAccessToken || !SHOPIFY_CONFIG.collectionId) {
+    return; // boutique non configurée : on garde l'aperçu de collection
+  }
+
+  const scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+
+  function ShopifyBuyInit() {
+    const client = ShopifyBuy.buildClient({
+      domain: SHOPIFY_CONFIG.domain,
+      storefrontAccessToken: SHOPIFY_CONFIG.storefrontAccessToken,
+    });
+
+    ShopifyBuy.UI.onReady(client).then((ui) => {
+      document.getElementById('shopify-collection').innerHTML = '';
+      ui.createComponent('collection', {
+        id: SHOPIFY_CONFIG.collectionId,
+        node: document.getElementById('shopify-collection'),
+        moneyFormat: '%E2%82%AC%7B%7Bamount%7D%7D',
+        options: {
+          product: {
+            styles: {
+              product: { 'text-align': 'left' },
+              button: { 'background-color': '#111111', ':hover': { 'background-color': '#FF4F9A' }, 'border-radius': '14px' },
+            },
+            contents: { options: true },
+          },
+          productSet: {
+            styles: { products: { '@media (min-width: 601px)': { 'margin-left': '-1rem' } } },
+          },
+          cart: {
+            styles: { button: { 'background-color': '#111111', ':hover': { 'background-color': '#FF4F9A' }, 'border-radius': '14px' } },
+            text: { total: 'Sous-total', button: 'Commander' },
+          },
+          toggle: {
+            styles: { toggle: { 'background-color': '#0066FF' } },
+          },
+        },
+      });
+    });
+  }
+
+  if (window.ShopifyBuy && window.ShopifyBuy.UI) {
+    ShopifyBuyInit();
+  } else {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    script.onload = ShopifyBuyInit;
+    document.head.appendChild(script);
+  }
+}
+
+initShopifyBuyButton();
+
+// ============================================================
 // Emplacement Google Analytics / Meta Pixel
 // ============================================================
 // Coller ici les identifiants fournis (GA4 measurement ID, Meta Pixel ID)

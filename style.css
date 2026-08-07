@@ -179,8 +179,11 @@ h2.center { margin: 0 auto 1rem; }
   .hero-visual { order: -1; min-height: 240px; }
 }
 
-/* ── COLLECTIONS PREVIEW ── */
-.collections { padding: clamp(4rem, 8vw, 6.5rem) 0; background: var(--white); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); }
+/* ── COLLECTIONS / BOUTIQUE SHOPIFY ── */
+.collections { padding: clamp(4rem, 8vw, 6.5rem) 0; background: var(--white); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); scroll-margin-top: var(--nav-h); }
+.shopify-collection { min-height: 200px; }
+/* Le SDK Shopify Buy Button injecte ses propres cartes produit ici une fois configuré */
+.shopify-buy-frame--product { border-radius: var(--radius) !important; }
 .product-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-bottom: 2.5rem;
 }

@@ -1,19 +1,20 @@
 # OSE!
 
-Site vitrine du site [ose-clothing.fr](https://ose-clothing.fr) — site statique
+Landing page du site [ose-clothing.fr](https://ose-clothing.fr) — site statique
 (HTML/CSS/JS), déployé automatiquement sur GitHub Pages à chaque push sur `main`.
 
-C'est une page de présentation de marque : aucune fonction d'achat, de panier ou de
-paiement. La boutique Shopify sera développée séparément, plus tard.
+La section "Collections" de la page d'accueil est le module boutique : elle affiche
+un aperçu (T-shirt/Sweat/Casquette) tant que Shopify n'est pas connecté, puis les
+vrais produits automatiquement une fois branché (voir plus bas).
 
 ## Structure
 
 Header (Accueil / Collections / À propos / Engagement / Contact + icône panier) et
 footer à 3 colonnes (Collections / À propos / Aide), identiques sur toutes les pages.
-Le lien "Collections" et l'icône panier renvoient vers la liste d'attente
-(`/#liste-attente`) tant que la boutique n'existe pas.
+Le lien "Collections" du header et le panier pointent vers `/#collections`, la
+section boutique de la page d'accueil.
 
-- `index.html` — page d'accueil (hero, aperçu collection, liste d'attente, engagement)
+- `index.html` — page d'accueil (hero, section boutique/collections, liste d'attente, engagement)
 - `a-propos/`, `engagement/`, `contact/`, `faq/`, `livraison-retours/`, `mentions-legales/` — pages secondaires (URL propres, sans `.html`)
 - `style.css` / `script.js` — styles et interactions
 - `assets/icons.svg` — sprite SVG des motifs de marque (citron, gouttes, mégaphone, panier, produits, réseaux sociaux)
@@ -22,6 +23,37 @@ Le lien "Collections" et l'icône panier renvoient vers la liste d'attente
 - `favicon-32.png`, `favicon-512.png`, `apple-touch-icon.png` — favicons (vraie photo du citron)
 - `.github/workflows/deploy.yml` — déploiement automatique sur GitHub Pages
 - `CNAME` — domaine personnalisé (`ose-clothing.fr`)
+
+## Brancher la boutique Shopify (Buy Button)
+
+La section "Collections" de la page d'accueil est prête à recevoir le module
+**Shopify Buy Button** (pas besoin d'un site Shopify complet, juste d'une boutique
+Shopify avec des produits).
+
+1. Créer une boutique sur [shopify.com](https://www.shopify.com) et y ajouter vos produits.
+2. Dans l'admin Shopify : **Paramètres → Applications et canaux de vente → Buy Button**
+   (installer le canal "Buy Button" s'il n'est pas déjà présent).
+3. Créer un bouton pour la collection à afficher, puis récupérer dans le code généré :
+   - `domain` (ex: `ose-clothing.myshopify.com`)
+   - `storefrontAccessToken`
+   - `id` de la collection
+4. Renseigner ces trois valeurs dans `script.js`, en haut de la section "MODULE
+   BOUTIQUE" :
+
+   ```js
+   const SHOPIFY_CONFIG = {
+     domain: 'votre-boutique.myshopify.com',
+     storefrontAccessToken: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+     collectionId: '123456789',
+   };
+   ```
+
+5. Commit + push : l'aperçu (T-shirt/Sweat/Casquette) est automatiquement remplacé
+   par les vrais produits de la collection.
+
+Le paiement, la livraison et les emails de confirmation sont gérés par le checkout
+Shopify (redirection lors du clic sur "Commander") — aucune infrastructure de
+paiement à gérer côté site.
 
 ## Formulaire de collecte d'emails (Formspree)
 
@@ -62,12 +94,6 @@ Puis, dans les paramètres GitHub Pages du dépôt (Settings → Pages), le doma
 personnalisé `ose-clothing.fr` doit être renseigné dans le champ "Custom domain"
 (nécessaire avec un déploiement via GitHub Actions — le fichier `CNAME` seul ne
 suffit pas) et "Enforce HTTPS" activé une fois le certificat généré.
-
-## Faire évoluer le site (ajout de la boutique Shopify)
-
-Le lien "Collections" du header et l'icône panier pointent vers `/#liste-attente`.
-Une fois la boutique Shopify prête, il suffit de remplacer ces `href` (dans chaque
-page, header + footer) par l'URL de la boutique — aucune refonte n'est nécessaire.
 
 ## Déploiement
 

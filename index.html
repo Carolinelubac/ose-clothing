@@ -29,14 +29,14 @@
   <nav>
     <ul class="nav-links" id="navLinks">
       <li><a href="/" class="active">Accueil</a></li>
-      <li><a href="/#liste-attente">Collections</a></li>
+      <li><a href="/#collections">Collections</a></li>
       <li><a href="/a-propos/">À propos</a></li>
       <li><a href="/engagement/">Engagement</a></li>
       <li><a href="/contact/">Contact</a></li>
     </ul>
   </nav>
   <div class="nav-actions">
-    <a href="/#liste-attente" class="cart-btn" aria-label="Panier — boutique bientôt disponible">
+    <a href="/#collections" class="cart-btn" aria-label="Panier — boutique bientôt disponible">
       <svg><use href="/assets/icons.svg#icon-cart"/></svg>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -55,7 +55,7 @@
       <h1>OSE<span class="dot">.</span></h1>
       <p class="lead">Avance malgré l'incertitude.</p>
       <div class="hero-actions">
-        <a href="#liste-attente" class="btn btn-primary">Découvrir les collections</a>
+        <a href="#collections" class="btn btn-primary">Découvrir les collections</a>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -70,31 +70,38 @@
 <section class="collections" id="collections">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow center">Ce qui arrive</p>
+      <p class="eyebrow center">La boutique</p>
       <h2 class="center">Des collections qui ont du sens</h2>
       <p class="lead center" style="margin: 0 auto;">Des vêtements pensés pour durer, portés par celles et ceux qui avancent sans attendre d'avoir toutes les réponses.</p>
     </div>
-    <div class="product-grid">
-      <div class="product-card">
-        <svg class="product-icon"><use href="/assets/icons.svg#icon-tshirt"/></svg>
-        <h3>T-shirt OSE!</h3>
-        <p class="muted">L'essentiel, en version affirmée.</p>
-        <span class="tag">Bientôt disponible</span>
-      </div>
-      <div class="product-card">
-        <svg class="product-icon"><use href="/assets/icons.svg#icon-hoodie"/></svg>
-        <h3>Sweat OSE!</h3>
-        <p class="muted">Le confort qui donne de l'élan.</p>
-        <span class="tag">Bientôt disponible</span>
-      </div>
-      <div class="product-card">
-        <svg class="product-icon"><use href="/assets/icons.svg#icon-cap"/></svg>
-        <h3>Casquette OSE!</h3>
-        <p class="muted">La touche qui signe le geste.</p>
-        <span class="tag">Bientôt disponible</span>
+
+    <!-- Module boutique Shopify (Buy Button).
+         Ce bloc est rempli automatiquement par le SDK Shopify Buy Button
+         configuré dans script.js. Voir README.md pour brancher la
+         boutique Shopify (domaine + storefront access token + ID collection). -->
+    <div id="shopify-collection" class="shopify-collection">
+      <!-- Aperçu affiché tant que Shopify n'est pas connecté -->
+      <div class="product-grid">
+        <div class="product-card">
+          <svg class="product-icon"><use href="/assets/icons.svg#icon-tshirt"/></svg>
+          <h3>T-shirt OSE!</h3>
+          <p class="muted">L'essentiel, en version affirmée.</p>
+          <span class="tag">Bientôt disponible</span>
+        </div>
+        <div class="product-card">
+          <svg class="product-icon"><use href="/assets/icons.svg#icon-hoodie"/></svg>
+          <h3>Sweat OSE!</h3>
+          <p class="muted">Le confort qui donne de l'élan.</p>
+          <span class="tag">Bientôt disponible</span>
+        </div>
+        <div class="product-card">
+          <svg class="product-icon"><use href="/assets/icons.svg#icon-cap"/></svg>
+          <h3>Casquette OSE!</h3>
+          <p class="muted">La touche qui signe le geste.</p>
+          <span class="tag">Bientôt disponible</span>
+        </div>
       </div>
     </div>
-    <p class="collections-cta"><a href="#liste-attente" class="btn btn-outline">Découvrir</a></p>
   </div>
 </section>
 
@@ -143,9 +150,9 @@
         <div class="footer-col">
           <h4>Collections</h4>
           <ul>
-            <li><a href="/#liste-attente">T-shirts</a></li>
-            <li><a href="/#liste-attente">Sweats</a></li>
-            <li><a href="/#liste-attente">Accessoires</a></li>
+            <li><a href="/#collections">T-shirts</a></li>
+            <li><a href="/#collections">Sweats</a></li>
+            <li><a href="/#collections">Accessoires</a></li>
           </ul>
         </div>
         <div class="footer-col">

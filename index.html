@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSE Clothing — Prêt-à-porter engagé</title>
+  <meta name="description" content="OSE Clothing — des vêtements pensés pour oser. Découvrez la collection et commandez en ligne." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ose-clothing.fr/" />
+  <meta property="og:title" content="OSE Clothing — Prêt-à-porter engagé" />
+  <meta property="og:description" content="Des vêtements pensés pour oser. Découvrez la collection et commandez en ligne." />
+  <meta property="og:image" content="https://ose-clothing.fr/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://ose-clothing.fr/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <header id="navbar">
+    <a href="#accueil" class="nav-logo">OSE<span>.</span></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#story">Notre histoire</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Panier">
+        🛍️ <span id="cartCount">0</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section id="accueil" class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Nouvelle collection</p>
+      <h1>OSE <em>porter</em><br>ce que tu es.</h1>
+      <p class="lead">Des pièces intemporelles, fabriquées avec soin, pour celles et ceux qui n'ont pas peur d'oser.</p>
+      <div class="hero-actions">
+        <a href="#collection" class="btn btn-primary">Découvrir la collection</a>
+        <a href="#story" class="btn btn-ghost">Notre histoire</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true"></div>
+  </section>
+
+  <!-- ── COLLECTION / SHOPIFY ── -->
+  <section id="collection" class="collection">
+    <div class="container">
+      <p class="eyebrow center">La collection</p>
+      <h2 class="center">Nos dernières pièces</h2>
+
+      <!-- Module boutique Shopify (Buy Button).
+           Ce bloc est rempli automatiquement par le SDK Shopify Buy Button
+           configuré dans script.js. Voir README.md pour brancher votre
+           boutique Shopify (domaine + storefront access token + IDs produits). -->
+      <div id="shopify-collection" class="shopify-collection">
+        <!-- Fallback affiché tant que Shopify n'est pas connecté -->
+        <div class="shop-placeholder">
+          <p>La boutique en ligne arrive très bientôt.</p>
+          <p class="muted">Module Shopify prêt à être connecté — voir <code>README.md</code>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STORY ── -->
+  <section id="story" class="story">
+    <div class="container story-grid">
+      <div class="story-visual" aria-hidden="true"></div>
+      <div class="story-text">
+        <p class="eyebrow">Notre histoire</p>
+        <h2>Une marque qui ose.</h2>
+        <p>OSE Clothing est née d'une envie simple : créer des vêtements qui donnent confiance, pensés pour durer et pour être portés sans complexe. Chaque pièce est sélectionnée pour sa qualité, sa coupe et son impact réduit.</p>
+        <p>On croit à une mode assumée, honnête sur ses matières et fabriquée avec des partenaires responsables.</p>
+        <a href="#contact" class="btn btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEWSLETTER ── -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Ne rate rien de la prochaine collection.</h2>
+      <p>Inscris-toi à la newsletter — les nouveautés et ventes privées, avant tout le monde.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" name="email" placeholder="ton@email.com" required />
+        <button type="submit" class="btn btn-primary">Je m'inscris</button>
+      </form>
+      <p class="form-note" id="newsletterNote"></p>
+    </div>
+  </section>
+
+  <!-- ── CONTACT / FOOTER ── -->
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#accueil" class="nav-logo">OSE<span>.</span></a>
+        <p class="muted">Prêt-à-porter engagé.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#story">Notre histoire</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Infos</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">CGV</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@ose-clothing.fr">contact@ose-clothing.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> OSE Clothing. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

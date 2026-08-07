@@ -208,6 +208,29 @@ h2.center { margin: 0 auto 1rem; }
 }
 .collections-cta { text-align: center; }
 
+/* ── AVIS ── */
+.avis { padding: clamp(4rem, 8vw, 6.5rem) 0; background: var(--cream-alt); border-top: 2px solid var(--black); scroll-margin-top: var(--nav-h); }
+.avis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+.avis-card {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+.avis-card .stars { color: var(--yellow-dark); font-size: 1.15rem; letter-spacing: .2em; }
+.avis-card p { font-style: italic; color: var(--black); }
+.avis-card .tag {
+  align-self: flex-start;
+  font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--pink-dark); background: rgba(255,79,154,.1); padding: .3rem .7rem; border-radius: var(--radius-pill);
+}
+@media (max-width: 760px) {
+  .avis-grid { grid-template-columns: 1fr; }
+}
+
 /* ── EMAIL CAPTURE ── */
 .waitlist { padding: clamp(3rem, 7vw, 5rem) 0; background: var(--cream-alt); scroll-margin-top: var(--nav-h); }
 .waitlist-box {

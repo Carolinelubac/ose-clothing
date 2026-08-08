@@ -26,21 +26,32 @@
     <ellipse cx="42" cy="40" rx="6" ry="12" fill="#FFFFFF" opacity=".55" transform="rotate(-15 42 40)"/>
   </symbol>
 
-  <!-- Mégaphone -->
-  <symbol id="icon-megaphone" viewBox="0 0 120 100">
+  <!-- Mégaphone + 3 traits de son (élément officiel indissociable — planche DA) -->
+  <symbol id="icon-megaphone" viewBox="0 0 135 100">
     <rect x="8" y="52" width="14" height="20" rx="3" fill="#FF4F9A" stroke="#111111" stroke-width="4"/>
     <rect x="12" y="70" width="8" height="16" rx="2" fill="#FF4F9A" stroke="#111111" stroke-width="4"/>
     <path d="M22 40 L62 14 A10 10 0 0 1 78 22 L78 86 A10 10 0 0 1 62 94 L22 68 Z"
           fill="#FFF7EA" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
     <ellipse cx="66" cy="54" rx="10" ry="26" fill="#FF4F9A" stroke="#111111" stroke-width="4"/>
-    <path d="M90 34 Q100 54 90 74" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
-    <path d="M102 24 Q118 54 102 84" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+    <g stroke-linecap="round">
+      <line x1="86" y1="30" x2="114" y2="12" stroke="#111111" stroke-width="13"/>
+      <line x1="86" y1="30" x2="114" y2="12" stroke="#FFD100" stroke-width="9"/>
+      <line x1="94" y1="54" x2="126" y2="54" stroke="#111111" stroke-width="13"/>
+      <line x1="94" y1="54" x2="126" y2="54" stroke="#FF4F9A" stroke-width="9"/>
+      <line x1="86" y1="78" x2="114" y2="96" stroke="#111111" stroke-width="13"/>
+      <line x1="86" y1="78" x2="114" y2="96" stroke="#009FE3" stroke-width="9"/>
+    </g>
   </symbol>
 
-  <!-- Point d'exclamation stylisé -->
+  <!-- Point d'exclamation stylisé — bleu de référence planche DA #009FE3 -->
   <symbol id="icon-bang" viewBox="0 0 40 100">
-    <rect x="10" y="4" width="20" height="60" rx="10" fill="#0066FF" stroke="#111111" stroke-width="4"/>
-    <circle cx="20" cy="86" r="12" fill="#0066FF" stroke="#111111" stroke-width="4"/>
+    <rect x="10" y="4" width="20" height="60" rx="10" fill="#009FE3" stroke="#111111" stroke-width="4"/>
+    <circle cx="20" cy="86" r="12" fill="#009FE3" stroke="#111111" stroke-width="4"/>
+  </symbol>
+
+  <!-- Petit trait d'accent (dynamise les compositions — pas les ondes du mégaphone) -->
+  <symbol id="icon-dash" viewBox="0 0 40 12">
+    <rect x="2" y="2" width="36" height="8" rx="4" fill="currentColor"/>
   </symbol>
 
   <!-- T-shirt (aperçu produit) -->

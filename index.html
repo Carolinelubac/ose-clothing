@@ -48,18 +48,25 @@
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <p class="eyebrow">
-        <svg width="16" height="16"><use href="/assets/icons.svg#icon-drop"/></svg>
-        Optimisme · Transmission · Confiance · Intemporalité
-      </p>
+      <div class="badge-row">
+        <span class="badge badge-yellow">Optimisme</span>
+        <span class="badge badge-pink">Transmission</span>
+        <span class="badge badge-blue">Confiance</span>
+      </div>
       <h1>OSE<span class="dot">.</span></h1>
       <p class="lead">Avance malgré l'incertitude.</p>
+      <span class="rule rule-pink"></span>
       <div class="hero-actions">
         <a href="#collections" class="btn btn-primary">Découvrir les collections</a>
         <a href="#achat" class="btn btn-outline">Commander</a>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
+      <svg class="dash dash-1 dash-pink"><use href="/assets/icons.svg#icon-dash"/></svg>
+      <svg class="dash dash-2 dash-yellow"><use href="/assets/icons.svg#icon-dash"/></svg>
+      <svg class="dash dash-3 dash-blue"><use href="/assets/icons.svg#icon-dash"/></svg>
+      <svg class="mini-drop mini-drop-1"><use href="/assets/icons.svg#icon-drop"/></svg>
+      <svg class="mini-drop mini-drop-2"><use href="/assets/icons.svg#icon-drop"/></svg>
       <picture>
         <source srcset="/assets/img/citron.webp" type="image/webp" />
         <img src="/assets/img/citron.png" alt="" class="lemon-hero" width="699" height="700" loading="eager" />
@@ -73,23 +80,24 @@
     <div class="section-head">
       <p class="eyebrow center">La boutique</p>
       <h2 class="center">Des collections qui ont du sens</h2>
+      <span class="rule rule-blue center"></span>
       <p class="lead center" style="margin: 0 auto;">Des vêtements pensés pour accompagner chaque étape du chemin, portés par celles et ceux qui avancent sans attendre d'avoir toutes les réponses.</p>
     </div>
 
     <div class="product-grid">
-      <a href="#achat" class="product-card">
+      <a href="#achat" class="product-card tint-yellow">
         <svg class="product-icon"><use href="/assets/icons.svg#icon-tshirt"/></svg>
         <h3>T-shirt OSE!</h3>
         <p class="muted">L'essentiel, en version affirmée.</p>
         <span class="tag">Voir le produit</span>
       </a>
-      <a href="#achat" class="product-card">
+      <a href="#achat" class="product-card tint-pink">
         <svg class="product-icon"><use href="/assets/icons.svg#icon-hoodie"/></svg>
         <h3>Sweat OSE!</h3>
         <p class="muted">Le confort qui donne de l'élan.</p>
         <span class="tag">Voir le produit</span>
       </a>
-      <a href="#achat" class="product-card">
+      <a href="#achat" class="product-card tint-blue">
         <svg class="product-icon"><use href="/assets/icons.svg#icon-cap"/></svg>
         <h3>Casquette OSE!</h3>
         <p class="muted">La touche qui signe le geste.</p>
@@ -108,30 +116,29 @@
     <div class="section-head">
       <p class="eyebrow center">Commander</p>
       <h2 class="center">La boutique OSE!</h2>
+      <span class="rule rule-pink center"></span>
       <p class="lead center" style="margin: 0 auto;">Paiement sécurisé, livraison suivie — commandez directement depuis le site.</p>
     </div>
 
     <!-- ============================================================
-         EMPLACEMENT SHOPIFY — À REMPLIR MANUELLEMENT
+         EMPLACEMENT SHOPIFY — À REMPLIR MANUELLEMENT (ne rien ajouter ici
+         qui doive rester invisible pour le public : ce commentaire n'est
+         lisible que dans le code, jamais sur le site).
          ============================================================
          Collez ici le code fourni par Shopify pour afficher vos produits
          et permettre l'achat (Admin Shopify → Paramètres → Applications
          et canaux de vente → Buy Button → « Générer un extrait de code »,
-         puis copier-coller tout le bloc <div> + <script> obtenu).
+         puis copier-coller tout le bloc <div> + <script> obtenu) À L'INTÉRIEUR
+         du <div id="shopify-buy-button"> ci-dessous.
 
-         Remplacez tout le contenu du <div id="shopify-buy-button"> ci-dessous
-         (y compris le bloc "shopify-placeholder") par le code Shopify.
+         Tant que ce <div> reste vide, toute la section "Achat" est
+         automatiquement masquée sur le site (voir style.css, règle
+         ".achat:has(#shopify-buy-button:empty)") : aucun bloc de développement
+         n'est donc visible par les visiteurs. Dès que le code Shopify est
+         collé, la section réapparaît avec les vrais produits.
          Voir README.md pour le détail des étapes.
          ============================================================ -->
-    <div id="shopify-buy-button" class="shopify-buy-button">
-
-      <div class="shopify-placeholder">
-        <svg class="shopify-placeholder-icon"><use href="/assets/icons.svg#icon-lemon"/></svg>
-        <h3>Emplacement réservé à la boutique Shopify</h3>
-        <p>Ce bloc est prêt à recevoir le code d'achat généré par Shopify (Buy Button).<br>Collez-le ici pour afficher vos produits et activer le paiement.</p>
-      </div>
-
-    </div>
+    <div id="shopify-buy-button" class="shopify-buy-button"></div>
     <!-- ============================================================
          FIN DE L'EMPLACEMENT SHOPIFY
          ============================================================ -->
@@ -148,6 +155,7 @@
     <div class="why-lemon-content">
       <p class="eyebrow">Le symbole</p>
       <h2>Pourquoi le citron&nbsp;?</h2>
+      <span class="rule rule-yellow"></span>
       <p class="lead">La vie est parfois acide.<br>Le citron aussi.</p>
       <p>Pourtant il est plein d'énergie, de fraîcheur et de vitalité. Il symbolise notre manière d'avancer&nbsp;: accepter les difficultés sans perdre l'envie de continuer.</p>
     </div>
@@ -175,24 +183,25 @@
     <div class="section-head">
       <p class="eyebrow center">Nos valeurs</p>
       <h2 class="center">Ce qui nous fait avancer</h2>
+      <span class="rule rule-black center"></span>
     </div>
     <div class="values-grid">
-      <div class="value-card">
+      <div class="value-card value-pink">
         <svg class="icon"><use href="/assets/icons.svg#icon-megaphone"/></svg>
         <h3>Transmission</h3>
         <p class="muted">Des messages et des valeurs qui peuvent passer d'une génération à l'autre.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card value-blue">
         <svg class="icon"><use href="/assets/icons.svg#icon-bang"/></svg>
         <h3>Confiance</h3>
         <p class="muted">Croire en soi et apprendre à avancer malgré l'incertitude.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card value-yellow">
         <svg class="icon"><use href="/assets/icons.svg#icon-drop"/></svg>
         <h3>Optimisme</h3>
         <p class="muted">Voir la possibilité d'avancer même lorsque tout n'est pas parfait.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card value-black">
         <svg class="icon"><use href="/assets/icons.svg#icon-lemon"/></svg>
         <h3>Intemporalité</h3>
         <p class="muted">Créer des produits et des messages qui restent pertinents au-delà des tendances.</p>

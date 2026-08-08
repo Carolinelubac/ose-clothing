@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>OSE! — Avance malgré l'incertitude.</title>
-<meta name="description" content="OSE! est une marque de vêtements et accessoires pour celles et ceux qui avancent malgré l'incertitude. Rejoignez la liste d'attente avant l'ouverture de la boutique." />
+<meta name="description" content="OSE! est une marque de vêtements et accessoires pour celles et ceux qui avancent malgré l'incertitude. T-shirts, sweats et casquettes OSE!." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ose-clothing.fr/" />
 <meta property="og:title" content="OSE! — Avance malgré l'incertitude." />
-<meta property="og:description" content="Une marque de vêtements et accessoires pour celles et ceux qui avancent malgré l'incertitude. Rejoignez la liste d'attente." />
+<meta property="og:description" content="Une marque de vêtements et accessoires pour celles et ceux qui avancent malgré l'incertitude." />
 <meta property="og:image" content="https://ose-clothing.fr/assets/img/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="canonical" href="https://ose-clothing.fr/" />
@@ -36,7 +36,7 @@
     </ul>
   </nav>
   <div class="nav-actions">
-    <a href="/#collections" class="cart-btn" aria-label="Panier — boutique bientôt disponible">
+    <a href="/#achat" class="cart-btn" aria-label="Voir la boutique">
       <svg><use href="/assets/icons.svg#icon-cart"/></svg>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -50,12 +50,13 @@
     <div class="hero-content">
       <p class="eyebrow">
         <svg width="16" height="16"><use href="/assets/icons.svg#icon-drop"/></svg>
-        La marque arrive bientôt
+        Optimisme · Transmission · Confiance · Intemporalité
       </p>
       <h1>OSE<span class="dot">.</span></h1>
       <p class="lead">Avance malgré l'incertitude.</p>
       <div class="hero-actions">
         <a href="#collections" class="btn btn-primary">Découvrir les collections</a>
+        <a href="#achat" class="btn btn-outline">Commander</a>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -72,60 +73,147 @@
     <div class="section-head">
       <p class="eyebrow center">La boutique</p>
       <h2 class="center">Des collections qui ont du sens</h2>
-      <p class="lead center" style="margin: 0 auto;">Des vêtements pensés pour durer, portés par celles et ceux qui avancent sans attendre d'avoir toutes les réponses.</p>
+      <p class="lead center" style="margin: 0 auto;">Des vêtements pensés pour accompagner chaque étape du chemin, portés par celles et ceux qui avancent sans attendre d'avoir toutes les réponses.</p>
     </div>
 
-    <!-- Module boutique Shopify (Buy Button).
-         Ce bloc est rempli automatiquement par le SDK Shopify Buy Button
-         configuré dans script.js. Voir README.md pour brancher la
-         boutique Shopify (domaine + storefront access token + ID collection). -->
-    <div id="shopify-collection" class="shopify-collection">
-      <!-- Aperçu affiché tant que Shopify n'est pas connecté -->
-      <div class="product-grid">
-        <div class="product-card">
-          <svg class="product-icon"><use href="/assets/icons.svg#icon-tshirt"/></svg>
-          <h3>T-shirt OSE!</h3>
-          <p class="muted">L'essentiel, en version affirmée.</p>
-          <span class="tag">Bientôt disponible</span>
-        </div>
-        <div class="product-card">
-          <svg class="product-icon"><use href="/assets/icons.svg#icon-hoodie"/></svg>
-          <h3>Sweat OSE!</h3>
-          <p class="muted">Le confort qui donne de l'élan.</p>
-          <span class="tag">Bientôt disponible</span>
-        </div>
-        <div class="product-card">
-          <svg class="product-icon"><use href="/assets/icons.svg#icon-cap"/></svg>
-          <h3>Casquette OSE!</h3>
-          <p class="muted">La touche qui signe le geste.</p>
-          <span class="tag">Bientôt disponible</span>
-        </div>
+    <div class="product-grid">
+      <a href="#achat" class="product-card">
+        <svg class="product-icon"><use href="/assets/icons.svg#icon-tshirt"/></svg>
+        <h3>T-shirt OSE!</h3>
+        <p class="muted">L'essentiel, en version affirmée.</p>
+        <span class="tag">Voir le produit</span>
+      </a>
+      <a href="#achat" class="product-card">
+        <svg class="product-icon"><use href="/assets/icons.svg#icon-hoodie"/></svg>
+        <h3>Sweat OSE!</h3>
+        <p class="muted">Le confort qui donne de l'élan.</p>
+        <span class="tag">Voir le produit</span>
+      </a>
+      <a href="#achat" class="product-card">
+        <svg class="product-icon"><use href="/assets/icons.svg#icon-cap"/></svg>
+        <h3>Casquette OSE!</h3>
+        <p class="muted">La touche qui signe le geste.</p>
+        <span class="tag">Voir le produit</span>
+      </a>
+    </div>
+
+    <div class="collections-cta">
+      <a href="#achat" class="btn btn-primary">Voir toute la boutique</a>
+    </div>
+  </div>
+</section>
+
+<section class="achat" id="achat">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow center">Commander</p>
+      <h2 class="center">La boutique OSE!</h2>
+      <p class="lead center" style="margin: 0 auto;">Paiement sécurisé, livraison suivie — commandez directement depuis le site.</p>
+    </div>
+
+    <!-- ============================================================
+         EMPLACEMENT SHOPIFY — À REMPLIR MANUELLEMENT
+         ============================================================
+         Collez ici le code fourni par Shopify pour afficher vos produits
+         et permettre l'achat (Admin Shopify → Paramètres → Applications
+         et canaux de vente → Buy Button → « Générer un extrait de code »,
+         puis copier-coller tout le bloc <div> + <script> obtenu).
+
+         Remplacez tout le contenu du <div id="shopify-buy-button"> ci-dessous
+         (y compris le bloc "shopify-placeholder") par le code Shopify.
+         Voir README.md pour le détail des étapes.
+         ============================================================ -->
+    <div id="shopify-buy-button" class="shopify-buy-button">
+
+      <div class="shopify-placeholder">
+        <svg class="shopify-placeholder-icon"><use href="/assets/icons.svg#icon-lemon"/></svg>
+        <h3>Emplacement réservé à la boutique Shopify</h3>
+        <p>Ce bloc est prêt à recevoir le code d'achat généré par Shopify (Buy Button).<br>Collez-le ici pour afficher vos produits et activer le paiement.</p>
+      </div>
+
+    </div>
+    <!-- ============================================================
+         FIN DE L'EMPLACEMENT SHOPIFY
+         ============================================================ -->
+
+  </div>
+</section>
+
+<section class="why-lemon">
+  <div class="container why-lemon-grid">
+    <picture class="why-lemon-visual" aria-hidden="true">
+      <source srcset="/assets/img/citron.webp" type="image/webp" />
+      <img src="/assets/img/citron.png" alt="" width="699" height="700" loading="lazy" />
+    </picture>
+    <div class="why-lemon-content">
+      <p class="eyebrow">Le symbole</p>
+      <h2>Pourquoi le citron&nbsp;?</h2>
+      <p class="lead">La vie est parfois acide.<br>Le citron aussi.</p>
+      <p>Pourtant il est plein d'énergie, de fraîcheur et de vitalité. Il symbolise notre manière d'avancer&nbsp;: accepter les difficultés sans perdre l'envie de continuer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <div class="container">
+    <svg width="40" height="100" style="margin: 0 auto 1.5rem;"><use href="/assets/icons.svg#icon-bang"/></svg>
+    <h2>La vie est un chemin.<br>À toi d'OSER.</h2>
+    <p class="manifesto-text">
+      OSE est une marque pour ceux qui avancent.<br>
+      Pas pour ceux qui réussissent du premier coup.<br>
+      Pas pour ceux qui n'ont jamais peur.<br>
+      Pour ceux qui continuent malgré le doute.<br><br>
+      Parce que l'échec n'est pas l'opposé de la réussite.<br>
+      Il en fait partie.
+    </p>
+    <a href="/a-propos/" class="btn btn-outline" style="border-color:#fff; color:#fff;">Découvrir notre histoire</a>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow center">Nos valeurs</p>
+      <h2 class="center">Ce qui nous fait avancer</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <svg class="icon"><use href="/assets/icons.svg#icon-megaphone"/></svg>
+        <h3>Transmission</h3>
+        <p class="muted">Des messages et des valeurs qui peuvent passer d'une génération à l'autre.</p>
+      </div>
+      <div class="value-card">
+        <svg class="icon"><use href="/assets/icons.svg#icon-bang"/></svg>
+        <h3>Confiance</h3>
+        <p class="muted">Croire en soi et apprendre à avancer malgré l'incertitude.</p>
+      </div>
+      <div class="value-card">
+        <svg class="icon"><use href="/assets/icons.svg#icon-drop"/></svg>
+        <h3>Optimisme</h3>
+        <p class="muted">Voir la possibilité d'avancer même lorsque tout n'est pas parfait.</p>
+      </div>
+      <div class="value-card">
+        <svg class="icon"><use href="/assets/icons.svg#icon-lemon"/></svg>
+        <h3>Intemporalité</h3>
+        <p class="muted">Créer des produits et des messages qui restent pertinents au-delà des tendances.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="waitlist" id="liste-attente">
+<section class="newsletter" id="newsletter">
   <div class="container">
-    <div class="waitlist-box">
+    <div class="newsletter-box">
       <svg class="megaphone-icon"><use href="/assets/icons.svg#icon-megaphone"/></svg>
-      <h3>La boutique arrive bientôt.</h3>
-      <p>Inscris-toi pour être prévenue en priorité de l'ouverture — et profiter des premières surprises.</p>
-      <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+      <h3>Rejoignez le mouvement.</h3>
+      <p>Inscrivez-vous pour suivre les nouvelles collections et les messages OSE!.</p>
+      <form class="newsletter-form" id="waitlistForm" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
         <input type="email" name="email" placeholder="ton@email.com" required aria-label="Adresse email" />
         <input type="text" name="_gotcha" class="form-hp" tabindex="-1" autocomplete="off" />
-        <button type="submit" class="btn btn-pink">Être prévenue en priorité</button>
+        <button type="submit" class="btn btn-pink">Continuer le chemin avec nous</button>
       </form>
       <p class="form-note" id="waitlistNote"></p>
     </div>
-  </div>
-</section>
-
-<section class="engagement-block">
-  <div class="container">
-    <svg width="40" height="100" style="margin: 0 auto 1.5rem;"><use href="/assets/icons.svg#icon-bang"/></svg>
-    <h2>La vie est un chemin.<br>À toi d'OSER.</h2>
-    <a href="/engagement/" class="btn btn-outline" style="border-color:#fff; color:#fff;">Notre engagement</a>
   </div>
 </section>
 
@@ -150,9 +238,9 @@
         <div class="footer-col">
           <h4>Collections</h4>
           <ul>
-            <li><a href="/#collections">T-shirts</a></li>
-            <li><a href="/#collections">Sweats</a></li>
-            <li><a href="/#collections">Accessoires</a></li>
+            <li><a href="/#achat">T-shirts</a></li>
+            <li><a href="/#achat">Sweats</a></li>
+            <li><a href="/#achat">Accessoires</a></li>
           </ul>
         </div>
         <div class="footer-col">

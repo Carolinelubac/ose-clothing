@@ -3,9 +3,9 @@
 Landing page du site [ose-clothing.fr](https://ose-clothing.fr) — site statique
 (HTML/CSS/JS), déployé automatiquement sur GitHub Pages à chaque push sur `main`.
 
-La section "Collections" de la page d'accueil est le module boutique : elle affiche
-un aperçu (T-shirt/Sweat/Casquette) tant que Shopify n'est pas connecté, puis les
-vrais produits automatiquement une fois branché (voir plus bas).
+La page d'accueil comporte une section "Achat" (`#achat`) dédiée à la boutique : un
+emplacement y est réservé pour coller directement le code Shopify (Buy Button), sans
+aucune configuration côté code (voir plus bas).
 
 ## Structure
 
@@ -14,7 +14,7 @@ footer à 3 colonnes (Collections / À propos / Aide), identiques sur toutes les
 Le lien "Collections" du header et le panier pointent vers `/#collections`, la
 section boutique de la page d'accueil.
 
-- `index.html` — page d'accueil (hero, section boutique/collections, liste d'attente, engagement)
+- `index.html` — page d'accueil (hero, collections, section achat/Shopify, pourquoi le citron, manifeste, valeurs, newsletter)
 - `a-propos/`, `engagement/`, `contact/`, `faq/`, `livraison-retours/`, `mentions-legales/` — pages secondaires (URL propres, sans `.html`)
 - `style.css` / `script.js` — styles et interactions
 - `assets/icons.svg` — sprite SVG des motifs de marque (citron, gouttes, mégaphone, panier, produits, réseaux sociaux)
@@ -24,36 +24,37 @@ section boutique de la page d'accueil.
 - `.github/workflows/deploy.yml` — déploiement automatique sur GitHub Pages
 - `CNAME` — domaine personnalisé (`ose-clothing.fr`)
 
-## Brancher la boutique Shopify (Buy Button)
+## Brancher la boutique Shopify
 
-La section "Collections" de la page d'accueil est prête à recevoir le module
-**Shopify Buy Button** (pas besoin d'un site Shopify complet, juste d'une boutique
-Shopify avec des produits).
+La section "Achat" de la page d'accueil (`index.html`, ancre `#achat`) contient un
+emplacement prêt à recevoir le code fourni par Shopify — aucune configuration dans
+`script.js`, il suffit de coller le code directement dans le HTML.
 
 1. Créer une boutique sur [shopify.com](https://www.shopify.com) et y ajouter vos produits.
 2. Dans l'admin Shopify : **Paramètres → Applications et canaux de vente → Buy Button**
    (installer le canal "Buy Button" s'il n'est pas déjà présent).
-3. Créer un bouton pour la collection à afficher, puis récupérer dans le code généré :
-   - `domain` (ex: `ose-clothing.myshopify.com`)
-   - `storefrontAccessToken`
-   - `id` de la collection
-4. Renseigner ces trois valeurs dans `script.js`, en haut de la section "MODULE
-   BOUTIQUE" :
+3. Créer un bouton pour le produit ou la collection à afficher, puis cliquer sur
+   **« Générer un extrait de code »**. Shopify affiche un bloc de code complet
+   (un `<div id="product-component-...">` suivi d'un `<script>`).
+4. Copier tout ce bloc.
+5. Ouvrir `index.html`, repérer la section délimitée par les commentaires :
 
-   ```js
-   const SHOPIFY_CONFIG = {
-     domain: 'votre-boutique.myshopify.com',
-     storefrontAccessToken: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-     collectionId: '123456789',
-   };
+   ```html
+   <!-- EMPLACEMENT SHOPIFY — À REMPLIR MANUELLEMENT -->
+   <div id="shopify-buy-button" class="shopify-buy-button">
+     <div class="shopify-placeholder">...</div>
+   </div>
+   <!-- FIN DE L'EMPLACEMENT SHOPIFY -->
    ```
 
-5. Commit + push : l'aperçu (T-shirt/Sweat/Casquette) est automatiquement remplacé
-   par les vrais produits de la collection.
+6. Remplacer tout le contenu du `<div id="shopify-buy-button">` (y compris le bloc
+   `shopify-placeholder`) par le code collé depuis Shopify.
+7. Commit + push : les vrais produits et le bouton de paiement Shopify s'affichent
+   à la place de l'emplacement réservé.
 
 Le paiement, la livraison et les emails de confirmation sont gérés par le checkout
-Shopify (redirection lors du clic sur "Commander") — aucune infrastructure de
-paiement à gérer côté site.
+Shopify (ouvert lors du clic sur "Ajouter au panier" / "Commander") — aucune
+infrastructure de paiement à gérer côté site.
 
 ## Formulaire de collecte d'emails (Formspree)
 

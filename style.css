@@ -179,11 +179,8 @@ h2.center { margin: 0 auto 1rem; }
   .hero-visual { order: -1; min-height: 240px; }
 }
 
-/* ── COLLECTIONS / BOUTIQUE SHOPIFY ── */
+/* ── COLLECTIONS (aperçu produits) ── */
 .collections { padding: clamp(4rem, 8vw, 6.5rem) 0; background: var(--white); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); scroll-margin-top: var(--nav-h); }
-.shopify-collection { min-height: 200px; }
-/* Le SDK Shopify Buy Button injecte ses propres cartes produit ici une fois configuré */
-.shopify-buy-frame--product { border-radius: var(--radius) !important; }
 .product-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-bottom: 2.5rem;
 }
@@ -208,29 +205,53 @@ h2.center { margin: 0 auto 1rem; }
 }
 .collections-cta { text-align: center; }
 
-/* ── EMAIL CAPTURE ── */
-.waitlist { padding: clamp(3rem, 7vw, 5rem) 0; background: var(--cream-alt); scroll-margin-top: var(--nav-h); }
-.waitlist-box {
+/* ── SECTION ACHAT (Shopify) ── */
+.achat { padding: clamp(4rem, 8vw, 6.5rem) 0; background: var(--cream-alt); scroll-margin-top: var(--nav-h); border-bottom: 2px solid var(--black); }
+.shopify-buy-button { min-height: 200px; }
+/* Le code Shopify collé ici (Buy Button) injecte ses propres cartes produit */
+.shopify-buy-frame--product { border-radius: var(--radius) !important; }
+.shopify-placeholder {
+  max-width: 620px; margin: 0 auto; text-align: center;
+  background: var(--white); border: 2px dashed var(--black); border-radius: var(--radius);
+  padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.5rem, 5vw, 3rem);
+}
+.shopify-placeholder-icon { width: 64px; height: 64px; margin: 0 auto 1.25rem; }
+.shopify-placeholder h3 { margin-bottom: .75rem; }
+.shopify-placeholder p { max-width: 44ch; margin: 0 auto; }
+
+/* ── POURQUOI LE CITRON ── */
+.why-lemon { padding: clamp(4rem, 9vw, 7rem) 0; background: var(--white); border-bottom: 2px solid var(--black); }
+.why-lemon-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: center; }
+.why-lemon-visual img { width: min(420px, 100%); margin: 0 auto; }
+.why-lemon-content .lead { margin: .5rem 0 1.25rem; }
+@media (max-width: 900px) {
+  .why-lemon-grid { grid-template-columns: 1fr; text-align: center; }
+  .why-lemon-content .lead { margin-left: auto; margin-right: auto; }
+}
+
+/* ── EMAIL CAPTURE (newsletter / liste d'attente) ── */
+.waitlist, .newsletter { padding: clamp(3rem, 7vw, 5rem) 0; background: var(--cream-alt); scroll-margin-top: var(--nav-h); }
+.waitlist-box, .newsletter-box {
   max-width: 620px; margin: 0 auto; text-align: center;
   background: var(--white); border: 2px solid var(--black); border-radius: var(--radius);
   padding: clamp(2rem, 5vw, 3rem);
 }
-.waitlist-box .megaphone-icon { width: 52px; height: 52px; margin: 0 auto 1rem; }
-.waitlist-box h3 { margin-bottom: .5rem; }
-.waitlist-box p { margin-bottom: 1.75rem; }
-.waitlist-form {
+.waitlist-box .megaphone-icon, .newsletter-box .megaphone-icon { width: 52px; height: 52px; margin: 0 auto 1rem; }
+.waitlist-box h3, .newsletter-box h3 { margin-bottom: .5rem; }
+.waitlist-box p, .newsletter-box p { margin-bottom: 1.75rem; }
+.waitlist-form, .newsletter-form {
   display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center;
 }
-.waitlist-form input[type="email"] {
+.waitlist-form input[type="email"], .newsletter-form input[type="email"] {
   flex: 1; min-width: 220px; padding: 1rem 1.25rem; border-radius: var(--radius-pill);
   border: 2px solid var(--black); font-family: inherit; font-size: .95rem; background: var(--cream);
 }
-.waitlist-form input[type="email"]:focus { outline: 3px solid var(--blue); outline-offset: 2px; }
+.waitlist-form input[type="email"]:focus, .newsletter-form input[type="email"]:focus { outline: 3px solid var(--blue); outline-offset: 2px; }
 .form-note { margin-top: 1rem; font-size: .88rem; font-weight: 600; color: var(--pink-dark); min-height: 1.2em; }
 .form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
-/* ── ENGAGEMENT / STORY BLOCK ── */
-.engagement-block {
+/* ── ENGAGEMENT / MANIFESTO BLOCK ── */
+.engagement-block, .manifesto {
   position: relative;
   padding: clamp(5rem, 12vw, 9rem) 0;
   background:
@@ -241,9 +262,16 @@ h2.center { margin: 0 auto 1rem; }
   text-align: center;
   overflow: hidden;
 }
-.engagement-block .container { position: relative; z-index: 2; max-width: 720px; }
-.engagement-block h2 { color: var(--white); margin-bottom: 2rem; }
+.engagement-block .container, .manifesto .container { position: relative; z-index: 2; max-width: 720px; }
+.engagement-block h2, .manifesto h2 { color: var(--white); margin-bottom: 2rem; }
 .engagement-block .exclaim { color: var(--blue); }
+.manifesto-text { color: rgba(255,255,255,.82); font-size: 1.1rem; margin-bottom: 2.25rem; }
+
+/* ── VALEURS (page d'accueil, 4 colonnes) ── */
+.values { padding: clamp(4rem, 8vw, 6.5rem) 0; background: var(--white); border-bottom: 2px solid var(--black); }
+.values .values-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 980px) { .values .values-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .values .values-grid { grid-template-columns: 1fr; } }
 
 /* ── GENERIC PAGE HERO (sous-pages) ── */
 .page-hero { padding: clamp(3rem, 7vw, 5rem) 0 2.5rem; background: var(--cream); text-align: center; }
